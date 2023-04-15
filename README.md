@@ -11,3 +11,19 @@ it is a docker container for sending linux computer stats to mqtt broker
    indiantechie/linuxlaptopstats2mqtt:latest
 
 ```
+then add the following to your mqtt.yaml
+```bash
+ sensor:
+  - name: "Laptop Battery"
+    state_topic: "homeassistant/sensor/laptop_battery/state"
+    unique_id: "laptop_battery"
+    icon: mdi:battery
+    device:
+      identifiers:
+        - laptop
+      manufacturer: "yourmanufacturer"
+      model: "your model"
+      name: "your laptop name"
+
+
+```
